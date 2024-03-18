@@ -23,6 +23,7 @@ resource "docker_container" "nginx_container" {
     internal = 80
     external = 8080
     #if can not access in the localhsot try editing the vagrant file forward port comment
+    #has to configure
   }
   
 }
