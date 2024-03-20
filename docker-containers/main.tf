@@ -32,6 +32,7 @@ terraform {
 
 }
 provider "docker" {
+  host = "unix:///var/run/docker.sock"
   
 }
 
@@ -41,7 +42,7 @@ resource "docker_image" "ubuntu" {
 }
 
 resource "docker_container" "ubuntu_container" {
-  image = docker_image.ubuntu.image_id
+  image = docker_image.ubuntu.image
   name  = "ubuntu_container"
   ports {
     internal = 80
